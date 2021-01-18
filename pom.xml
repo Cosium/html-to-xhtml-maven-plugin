@@ -3,7 +3,7 @@
 
   <groupId>com.cosium.html</groupId>
   <artifactId>html-to-xhtml-maven-plugin</artifactId>
-  <version>1.1</version>
+  <version>1.2-SNAPSHOT</version>
   <packaging>maven-plugin</packaging>
 
   <name>HTML to XHTML Maven Plugin</name>
@@ -294,6 +294,6 @@
     <connection>scm:git:https://github.com/Cosium/html-to-xhtml-maven-plugin</connection>
     <developerConnection>scm:git:https://github.com/Cosium/html-to-xhtml-maven-plugin</developerConnection>
     <url>https://github.com/Cosium/html-to-xhtml-maven-plugin</url>
-    <tag>html-to-xhtml-maven-plugin-1.1</tag>
+    <tag>HEAD</tag>
   </scm>
 </project>
