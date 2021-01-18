@@ -15,10 +15,9 @@ class HtmlToXhtmlConversionTest {
     File output = Files.newTemporaryFile();
 
     new HtmlToXhtmlConversion(
-            "UTF-8",
             Paths.get(getClass().getResource("/sample.html").toURI()).toString(),
             output.getAbsolutePath())
-        .execute();
+        .execute("UTF-8");
 
     assertThat(Paths.get(getClass().getResource("/sample.xhtml").toURI()))
         .hasSameContentAs(output.toPath());

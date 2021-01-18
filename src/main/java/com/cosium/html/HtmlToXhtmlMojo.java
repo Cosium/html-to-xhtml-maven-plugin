@@ -12,6 +12,9 @@ import org.apache.maven.plugins.annotations.Parameter;
 @Mojo(name = "html-to-xhtml", defaultPhase = LifecyclePhase.GENERATE_RESOURCES, threadSafe = true)
 public class HtmlToXhtmlMojo extends AbstractMojo {
 
+  @Parameter(defaultValue = "${project.build.sourceEncoding}")
+  private String encoding;
+
   @Parameter(property = "htx.conversions")
   private List<HtmlToXhtmlConversion> conversions;
 
@@ -19,6 +22,6 @@ public class HtmlToXhtmlMojo extends AbstractMojo {
   public void execute() {
     ofNullable(conversions)
         .orElseGet(Collections::emptyList)
-        .forEach(HtmlToXhtmlConversion::execute);
+        .forEach(conversion -> conversion.execute(encoding));
   }
 }
