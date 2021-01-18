@@ -277,4 +277,11 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
+
+  <scm>
+    <connection>scm:git:https://github.com/Cosium/html-to-xhtml-maven-plugin</connection>
+    <developerConnection>scm:git:https://github.com/Cosium/html-to-xhtml-maven-plugin</developerConnection>
+    <url>https://github.com/Cosium/html-to-xhtml-maven-plugin</url>
+    <tag>HEAD</tag>
+  </scm>
 </project>
