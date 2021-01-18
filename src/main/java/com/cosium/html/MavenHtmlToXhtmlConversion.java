@@ -8,6 +8,7 @@ import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import org.apache.maven.plugins.annotations.Parameter;
 
 public class MavenHtmlToXhtmlConversion {
@@ -60,13 +61,21 @@ public class MavenHtmlToXhtmlConversion {
   }
 
   private void doExecute(String defaultEncoding) throws IOException {
-    Path htmlFile = Paths.get(htmlInputFilePath);
-    String baseUri = htmlFile.toAbsolutePath().toString();
-    try (InputStream inputStream = Files.newInputStream(htmlFile);
-        OutputStream outputStream = Files.newOutputStream(Paths.get(xhtmlOutputFilePath))) {
-      new HtmlToXhtmlConversion(
-              ofNullable(encoding).orElse(defaultEncoding), tagElementToWrapDocumentIn)
-          .execute(baseUri, inputStream, outputStream);
+    Path htmlInputFile = Paths.get(htmlInputFilePath);
+
+    Path copiedHtmlInputFile = Files.createTempFile(null, null);
+    try {
+      Files.copy(htmlInputFile, copiedHtmlInputFile, StandardCopyOption.REPLACE_EXISTING);
+      String baseUri = copiedHtmlInputFile.toAbsolutePath().toString();
+
+      try (InputStream inputStream = Files.newInputStream(copiedHtmlInputFile);
+          OutputStream outputStream = Files.newOutputStream(Paths.get(xhtmlOutputFilePath))) {
+        new HtmlToXhtmlConversion(
+                ofNullable(encoding).orElse(defaultEncoding), tagElementToWrapDocumentIn)
+            .execute(baseUri, inputStream, outputStream);
+      }
+    } finally {
+      Files.deleteIfExists(copiedHtmlInputFile);
     }
   }
 }
