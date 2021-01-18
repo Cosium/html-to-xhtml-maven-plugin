@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.cosium.code</groupId>
+  <groupId>com.cosium.html</groupId>
   <artifactId>html-to-xhtml-maven-plugin</artifactId>
   <version>3.1-SNAPSHOT</version>
   <packaging>maven-plugin</packaging>

@@ -9,7 +9,7 @@ import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 
-@Mojo(name = "html-to-xhtml", defaultPhase = LifecyclePhase.NONE, threadSafe = true)
+@Mojo(name = "html-to-xhtml", defaultPhase = LifecyclePhase.GENERATE_RESOURCES, threadSafe = true)
 public class HtmlToXhtmlMojo extends AbstractMojo {
 
   @Parameter(property = "htx.conversions")
