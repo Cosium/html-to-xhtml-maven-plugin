@@ -1,5 +1,5 @@
 [![Maven Central Latest](https://img.shields.io/maven-central/v/com.cosium.html/html-to-xhtml-maven-plugin.svg)](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.cosium.code%22%20AND%20a%3A%22html-to-xhtml-maven-plugin%22)
-[![Build Status](https://travis-ci.org/Cosium/html-to-xhtml-maven-plugin.svg?branch=master)](https://travis-ci.org/Cosium/html-to-xhtml-maven-plugin)
+[![CI](https://github.com/Cosium/html-to-xhtml-maven-plugin/workflows/CI/badge.svg)]
 
 # HTML To XHTML Maven Plugin
 
