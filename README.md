@@ -4,6 +4,7 @@
 # HTML To XHTML Maven Plugin
 
 ```xml
+
 <build>
   <plugins>
     <plugin>
@@ -22,9 +23,10 @@
       <configuration>
         <conversions>
           <conversion>
-            <encoding>UTF-8</encoding>
             <htmlInputFilePath>${project.basedir}/example.html</htmlInputFilePath>
             <xhtmlOutputFilePath>${project.build.outputDirectory}/example.xhtml</xhtmlOutputFilePath>
+            <!--Optional-->
+            <encoding>UTF-8</encoding>
           </conversion>
         </conversions>
       </configuration>
