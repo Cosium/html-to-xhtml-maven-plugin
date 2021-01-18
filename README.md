@@ -27,6 +27,7 @@
             <xhtmlOutputFilePath>${project.build.outputDirectory}/example.xhtml</xhtmlOutputFilePath>
             <!--Optional-->
             <encoding>UTF-8</encoding>
+            <tagElementToWrapDocumentIn>div</tagElementToWrapDocumentIn>
           </conversion>
         </conversions>
       </configuration>

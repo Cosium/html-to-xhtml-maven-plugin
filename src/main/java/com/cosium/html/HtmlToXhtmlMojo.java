@@ -16,7 +16,7 @@ public class HtmlToXhtmlMojo extends AbstractMojo {
   private String encoding;
 
   @Parameter(property = "htx.conversions")
-  private List<HtmlToXhtmlConversion> conversions;
+  private List<MavenHtmlToXhtmlConversion> conversions;
 
   @Override
   public void execute() {
